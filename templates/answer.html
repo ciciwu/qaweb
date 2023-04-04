@@ -1,0 +1,31 @@
+<!doctype html>
+<head>
+    <title>Models output</title>
+    <style>
+        body {
+			font-family: Arial, sans-serif;
+			background-color: #f2f2f2;
+		}
+		
+		.container {
+			margin: auto;
+			width: 50%;
+			padding: 20px;
+			background-color: #fff;
+			border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+            text-align: center;
+		}
+    </style>
+</head>
+<html>
+    
+<body style="background-color:lightsteelblue;">
+    <p>You asked about: {{ question }}</p>
+    <br>
+    <p>The answers from GPT2 : {{ answer }}</p>
+    <br>
+    <p>The answers from model tuned: {{ dm_answer }}</p>
+</body>
+
+</html>
