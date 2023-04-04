@@ -28,14 +28,13 @@ def answer():
     
     # use the ChatGPT-2 model to generate an answer
     input_ids = tokenizer.encode(q, return_tensors="pt")
-    output = model.generate(input_ids)
+    output = model.generate(input_ids,max_length=150)
     answer = tokenizer.decode(output[0], skip_special_tokens=True)
 
     # Domain knowledge trained model
     dm_input_ids = dm_tokenizer.encode(q, return_tensors="pt")
-    dm_output = dm_model.generate(dm_input_ids )
+    dm_output = dm_model.generate(dm_input_ids,max_length=150)
     dm_answer = dm_tokenizer.decode(dm_output[0], skip_special_tokens=True)
-
     
     # return the answer to the web page
     return render_template("answer.html", question=question, answer=answer, dm_answer = dm_answer)
